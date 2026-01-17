@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
 
-const POSTS_DIR = './posts';
-const TEMPLATES_DIR = './templates';
-const STATIC_DIR = './static';
-const OUTPUT_DIR = './dist';
+const ROOT_DIR = path.join(__dirname, '..');
+const POSTS_DIR = path.join(ROOT_DIR, 'posts');
+const TEMPLATES_DIR = path.join(ROOT_DIR, 'templates');
+const STATIC_DIR = path.join(ROOT_DIR, 'static');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'dist');
 
 // Parse front matter from markdown
 function parseFrontMatter(content) {
