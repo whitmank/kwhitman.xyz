@@ -4,9 +4,15 @@
   "description": "Simple markdown blog",
   "scripts": {
     "build": "node md-processor/build.js",
+    "dev": "concurrently \"nodemon --watch posts --watch templates --watch static -e md,html,css --exec 'npm run build'\" \"browser-sync start --server dist --files dist --extensions html\"",
     "publish": "./publish"
   },
   "dependencies": {
     "marked": "^15.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.11"
   }
 }

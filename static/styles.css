@@ -106,6 +106,12 @@ footer {
   color: #0066cc;
 }
 
+.post-content hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
 .post-footer a {
   color: #666;
   text-decoration: none;
