@@ -89,7 +89,7 @@ function build() {
 
   // Generate post list HTML
   const postListHtml = posts.map(p =>
-    `<article class="post-preview">
+    `<article class="post-preview" data-date="${p.date || ''}">
       <a href="posts/${p.slug}.html">
         <h2>${p.title}</h2>
         ${p.date ? `<time>${p.date}</time>` : ''}

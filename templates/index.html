@@ -1,4 +1,27 @@
 <section class="posts-list">
   <h1>Posts</h1>
-  {{posts}}
+  <button class="sort-toggle" onclick="toggleSort()" title="Toggle sort order">
+    <span class="arrow">↓</span>
+    <span class="label-desc">Newest</span>
+    <span class="label-asc">Oldest</span>
+  </button>
+  <div class="posts-container">
+    {{posts}}
+  </div>
 </section>
+
+<script>
+  let ascending = false;
+  function toggleSort() {
+    ascending = !ascending;
+    const container = document.querySelector('.posts-container');
+    const posts = [...container.querySelectorAll('.post-preview')];
+    posts.sort((a, b) => {
+      const dateA = a.dataset.date || '';
+      const dateB = b.dataset.date || '';
+      return ascending ? dateA.localeCompare(dateB) : dateB.localeCompare(dateA);
+    });
+    posts.forEach(post => container.appendChild(post));
+    document.querySelector('.sort-toggle').classList.toggle('asc', ascending);
+  }
+</script>

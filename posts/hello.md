@@ -1,6 +1,6 @@
 ---
 title: Hello
-Date: 2026-01-17 17:12
+date: 2026-01-17 17:12
 ---
 
 This is attempt seventeen or so of telling myself that I should "start a blog".
