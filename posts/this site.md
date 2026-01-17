@@ -12,5 +12,5 @@ It's a folder on my machine that syncs with a git repo, git pages for hosting.
 Each post is a markdown files, which are then built into static html whenever I publish changes (github actions).
 It even wrote me a little shell script to do the build and push, all I gotta do is type ```publish``` in the site directory.
 
-That’s pretty cool computing. So easy anyone can do it… if you pay the tax. 
+That’s pretty cool computing. So easy anyone can do it… if you pay the tax...
 
