@@ -33,6 +33,9 @@ function ensureDir(dir) {
 
 // Main build function
 function build() {
+  // Cache-busting timestamp
+  const cacheBust = Date.now();
+
   // Load templates
   const baseTemplate = fs.readFileSync(path.join(TEMPLATES_DIR, 'base.html'), 'utf-8');
   const postTemplate = fs.readFileSync(path.join(TEMPLATES_DIR, 'post.html'), 'utf-8');
@@ -76,7 +79,8 @@ function build() {
         });
         const postPage = render(baseTemplate, {
           title: meta.title || slug,
-          content: postContent
+          content: postContent,
+          cacheBust
         });
 
         fs.writeFileSync(path.join(OUTPUT_DIR, 'posts', `${slug}.html`), postPage);
@@ -99,7 +103,7 @@ function build() {
 
   // Render index page
   const indexContent = render(indexTemplate, { posts: postListHtml });
-  const indexPage = render(baseTemplate, { title: 'Home', content: indexContent });
+  const indexPage = render(baseTemplate, { title: 'Home', content: indexContent, cacheBust });
 
   fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), indexPage);
   console.log('Built: index.html');
