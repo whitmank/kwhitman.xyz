@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if there are changes to commit
+if git diff --quiet && git diff --staged --quiet; then
+  echo "Nothing to publish - no changes detected"
+  exit 0
+fi
+
+# Stage all changes
+git add .
+
+# Commit with message (use argument or default)
+MESSAGE="${1:-Update posts}"
+git commit -m "$MESSAGE"
+
+# Push to remote
+git push
+
+echo "Published!"
