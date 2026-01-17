@@ -5,8 +5,8 @@ date: 2026-01-17 21:51
 
 I used Claude Code to make this site in like half an hour.
 It's a folder on my machine that syncs with a git repo, git pages for hosting.
-Each post is a markdown file, which is built into static html whenever I publish changes (github actions).
-Made a little script to run the build and push to git, so all I gotta do is write my post, drag it into the folder, and type ```publish``` in the cli. 
+Each post is a markdown file, which is built into static html whenever I publish changes (js/github actions).
+Made a little script to run the MD=>HTML build and push to git, so all I gotta do is write my post, drag it into the folder, and type ```publish``` in the cli. 
 
 Now that’s computing.
 So easy anyone can do it… if you pay the tax.
