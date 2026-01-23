@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if there are changes to commit
-if git diff --quiet && git diff --staged --quiet; then
+if git diff --quiet && git diff --staged --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
   echo "Nothing to publish - no changes detected"
   exit 0
 fi
